@@ -81,7 +81,7 @@ h2 {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   flex: 1;
-  /* min-width: 280px; */
+  /* min-width: 200px; */
   width: 90%;
   text-align: center;
 }
@@ -236,6 +236,17 @@ button[type="submit"]:hover {
 @media (max-width: 480px) {
   .feature-item {
     width: 100%; /* On very small screens, one item per row */
+  }
+  .course-card {
+    width: 90%; /* On very small screens, one item per row */
+    padding: 5px;
+  }
+  .course-details-modal {
+    width: 80%;
+    height: 80%;
+  } 
+  #courses {
+    margin-left: 0;
   }
 }
 
