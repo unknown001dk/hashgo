@@ -15,18 +15,22 @@ document
     // Add the user to the database or API here
     const apiUrl = "https://hashgo-api.vercel.app/api/v1/users"; // Corrected URL format
 
-    fetch(apiUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        phoneNumber,
-        course,
-      }),
-    })
+    fetch(
+      apiUrl,
+      { mode: "no-cors" },
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          phoneNumber,
+          course,
+        }),
+      }
+    )
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
