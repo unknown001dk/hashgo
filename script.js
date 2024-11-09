@@ -17,7 +17,6 @@ document
 
     fetch(
       apiUrl,
-      { mode: "no-cors" },
       {
         method: "POST",
         headers: {
