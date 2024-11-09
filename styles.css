@@ -210,7 +210,6 @@ button[type="submit"]:hover {
   justify-content: center;
 }
 
-
 .feature-item {
   background: #fff;
   padding: 20px;
@@ -229,12 +228,12 @@ button[type="submit"]:hover {
 /* @media (max-width: 768px) {
   .feature-item {
     width: calc(50% - 20px); /* On smaller screens, two items per row */
-  /* }
-} */ 
+/* }
+} */
 
 /* Modal input focus effect */
-.modal input:focus, 
-.modal select:focus, 
+.modal input:focus,
+.modal select:focus,
 .modal textarea:focus {
   outline: none; /* Removes default browser outline */
   border: 2px solid #4caf50; /* Adds a custom green border on focus */
@@ -253,7 +252,7 @@ button[type="submit"]:hover {
   .course-details-modal {
     width: 80%;
     height: 80%;
-  } 
+  }
   #courses {
     margin-left: 0;
   }
@@ -275,7 +274,6 @@ button[type="submit"]:hover {
 .testimonial-item p {
   margin-bottom: 20px;
 }
-
 
 .testimonial-item {
   background: #fff;
@@ -350,7 +348,7 @@ button[type="submit"]:hover {
   display: none;
 }
 
-.course-details-content p { 
+.course-details-content p {
   margin-bottom: 20px;
 }
 .course-list {
@@ -478,4 +476,80 @@ button:hover {
   to {
     transform: translateY(0);
   }
+}
+.timer {
+  font-size: 1.2em;
+  font-weight: bold;
+  position: absolute;
+  z-index: 100;
+  background-color: #2e7d32;
+  top: 30px;
+  right: 10px;
+  padding: 10px;
+  border: 2px solid #38f405;
+}
+.timer:hover {
+  background-color: #38f405;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+}
+@media (max-width: 480px) {
+  .timer {
+    font-size: 1em;
+    top: 10px;
+  }
+}
+
+/* Basic Toast Styles */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  min-width: 200px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: black;
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Success Toast Styles */
+.success-toast {
+  background-color: #fff;
+  border-bottom: 3px solid green;
+}
+
+/* Error Toast Styles */
+.error-toast {
+  background-color: #fff;
+  border-bottom: 3px solid red;
+}
+
+/* Show Toast */
+.show {
+  opacity: 1;
+}
+
+/* Close Button */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #888;
+}
+
+.close-btn:hover {
+  color: #333;
 }

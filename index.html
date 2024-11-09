@@ -17,6 +17,7 @@
         <h1>Welcome to #GO Academy</h1>
         <p>Your journey to becoming a MERN Stack Developer starts here!</p>
         <button onclick="openRegistrationForm()">Register Now</button>
+        <p id="countdown-timer" class="timer"></p>
       </div>
     </header>
 
@@ -24,10 +25,10 @@
     <section id="about" class="container animated-card">
       <h2>About Us</h2>
       <p>
-        #GO Academy is dedicated to helping aspiring developers learn MERN
-        Stack through hands-on projects. With expert guidance, supportive
-        resources, and practical coding exercises, we ensure that our students
-        are job-ready by the end of the course.
+        #GO Academy is dedicated to helping aspiring developers learn MERN Stack
+        through hands-on projects. With expert guidance, supportive resources,
+        and practical coding exercises, we ensure that our students are
+        job-ready by the end of the course.
       </p>
     </section>
 
@@ -233,11 +234,11 @@
           <label for="email">Email</label>
           <input type="email" id="email" name="email" required />
 
-          <label for="Phonenumber">Phonenumber</label>
-          <input type="tel" id="Phonenumber" name="Phonenumber" required />
+          <label for="phonenumber">Phone Number</label>
+          <input type="tel" id="phonenumber" name="phonenumber" required />
 
           <label for="course">Select Course:</label>
-          <select id="course" name="course">
+          <select id="course" name="course" required>
             <option value="" disabled selected hidden>Select Course</option>
             <option value="10 Projects in 15 Days">
               10 Projects in 15 Days
@@ -247,6 +248,17 @@
           <button type="submit">Register</button>
         </form>
       </div>
+    </div>
+
+    <!-- Toast -->
+    <!-- Success Toast -->
+    <div id="success-toast" class="toast success-toast">
+      <span id="success-message">Operation was successful!</span>
+    </div>
+
+    <!-- Error Toast -->
+    <div id="error-toast" class="toast error-toast">
+      <span id="error-message">Something went wrong!</span>
     </div>
 
     <script src="script.js"></script>
