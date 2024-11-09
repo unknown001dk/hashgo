@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Registration</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="container">
+        <h1>Welcome to #start Academy</h1>
+        <p>Your journey to becoming a MERN Stack Developer starts here!</p>
+        <button onclick="openRegistrationForm()">Register Now</button>
+      </div>
+    </header>
+
+    <!-- About Us Section -->
+    <section id="about" class="container animated-card">
+      <h2>About Us</h2>
+      <p>
+        #start Academy is dedicated to helping aspiring developers learn MERN
+        Stack through hands-on projects. With expert guidance, supportive
+        resources, and practical coding exercises, we ensure that our students
+        are job-ready by the end of the course.
+      </p>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="container">
+      <h2>Why Choose Us?</h2>
+      <div class="feature-list">
+        <div class="feature-item animated-card">
+          <h3>Hands-On Projects</h3>
+          <p>
+            Each day, tackle a real-world project that enhances your skills and
+            builds your portfolio.
+          </p>
+        </div>
+        <div class="feature-item animated-card">
+          <h3>Expert Guidance</h3>
+          <p>
+            Learn from experienced developers who will guide you through the
+            learning process step-by-step.
+          </p>
+        </div>
+        <div class="feature-item animated-card">
+          <h3>Community Support</h3>
+          <p>
+            Join a community of like-minded learners and receive feedback,
+            support, and encouragement.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="container">
+      <h2>Available Courses</h2>
+      <div class="course-list">
+        <div class="course-card animated-card">
+          <h3>10 Projects in 15 Days</h3>
+          <p>Learn the MERN Stack by building 10 hands-on projects!</p>
+          <button onclick="openRegistrationForm()">Register</button>
+          <button onclick="openCourseDetails()">Learn More</button>
+        </div>
+
+        <!-- Additional courses can be added here -->
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="container">
+      <h2>What Our Students Say</h2>
+      <div class="testimonial-list">
+        <div class="testimonial-item animated-card">
+          <p>
+            "I learned so much in just 15 days! The projects were engaging, and
+            I felt supported every step of the way."
+          </p>
+          <p><strong>- Alex, Student</strong></p>
+        </div>
+        <div class="testimonial-item animated-card">
+          <p>
+            "The hands-on projects were exactly what I needed to build my
+            skills. I now feel confident applying for jobs!"
+          </p>
+          <p><strong>- Jamie, Junior Developer</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="">
+      <h2>Contact Us</h2>
+      <p>
+        If you have any questions, feel free to reach out at
+        <a href="mailto:info@startacademy.com">info@startacademy.com</a>.
+      </p>
+    </section>
+
+    <!-- Modal for Course Details -->
+    <div id="course-details-modal" class="course-details-modal">
+      <div class="course-details-content">
+        <span class="close-btn" onclick="closeCourseDetails()">&times;</span>
+        <h3>Course Overview</h3>
+        <p>
+          In this course, you will build 10 projects in just 15 days. Learn key
+          web development concepts by hands-on coding experience!
+        </p>
+        <h4>Course Outline</h4>
+        <div class="course-outline">
+          <div class="outline-item">
+            <i class="fas fa-tasks"></i>
+            <div class="outline-text">
+              <h5>1. To-Do List App</h5>
+              <p>
+                A basic app where users can add, edit, delete, and mark tasks as
+                completed. Simple list management and task filtering.
+              </p>
+            </div>
+          </div>
+          <div class="outline-item">
+            <i class="fas fa-sticky-note"></i>
+            <div class="outline-text">
+              <h5>2. Notes App</h5>
+              <p>
+                A simple app for users to write, save, and delete notes. CRUD
+                functionality for text-based notes.
+              </p>
+            </div>
+          </div>
+          <div class="outline-item">
+            <i class="fas fa-cloud-sun"></i>
+            <div class="outline-text">
+              <h5>3. Weather App</h5>
+              <p>
+                An app that fetches weather data based on user input for a
+                location. Displays real-time weather data.
+              </p>
+            </div>
+          </div>
+          <div class="outline-item">
+            <i class="fas fa-utensils"></i>
+            <div class="outline-text">
+              <h5>4. Recipe Book</h5>
+              <p>
+                Allows users to save and categorize recipes. Features include
+                recipe name, ingredients, and instructions with CRUD operations.
+              </p>
+            </div>
+          </div>
+          <div class="outline-item">
+            <i class="fas fa-dollar-sign"></i>
+            <div class="outline-text">
+              <h5>5. Expense Tracker</h5>
+              <p>
+                A basic app for tracking income and expenses. Features include
+                add/edit/delete transactions and balance tracking.
+              </p>
+            </div>
+          </div>
+          <div class="outline-item">
+            <i class="fas fa-pen-alt"></i>
+            <div class="outline-text">
+              <h5>6. Simple Blog</h5>
+              <p>
+                Create, read, edit, and delete blog posts. Simple CRUD
+                operations for blog content management.
+              </p>
+            </div>
+          </div>
+          <div class="outline-item">
+            <i class="fas fa-address-book"></i>
+            <div class="outline-text">
+              <h5>7. Contact Manager</h5>
+              <p>
+                A contact manager app where users can store, edit, and view
+                contact details. CRUD operations for name, phone, and email.
+              </p>
+            </div>
+          </div>
+          <div class="outline-item">
+            <i class="fas fa-hourglass-start"></i>
+            <div class="outline-text">
+              <h5>8. Countdown Timer</h5>
+              <p>
+                A countdown timer where users can set a target date and time.
+                Includes timer display and reset functionality.
+              </p>
+            </div>
+          </div>
+          <div class="outline-item">
+            <i class="fas fa-calendar-check"></i>
+            <div class="outline-text">
+              <h5>9. Habit Tracker</h5>
+              <p>
+                A habit tracker where users can track their daily habits with
+                simple checkboxes for each day of the week.
+              </p>
+            </div>
+          </div>
+          <div class="outline-item">
+            <i class="fas fa-quote-right"></i>
+            <div class="outline-text">
+              <h5>10. Quotes Generator</h5>
+              <p>
+                Displays a random quote on each refresh or button click. Can
+                fetch quotes from an API or static list.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Registration Form Modal -->
+    <div id="registrationModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="closeRegistrationForm()"
+          >&times;</span
+        >
+        <h2>Register for Course</h2>
+        <form id="registrationForm">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="Phonenumber">Phonenumber</label>
+          <input type="tel" id="Phonenumber" name="Phonenumber" required />
+
+          <label for="course">Select Course:</label>
+          <select id="course" name="course">
+            <option value="" disabled selected hidden>Select Course</option>
+            <option value="10 Projects in 15 Days">
+              10 Projects in 15 Days
+            </option>
+          </select>
+
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+  <script>
+    function openCourseDetails() {
+      document.getElementById("course-details-modal").style.display = "flex";
+      document
+        .getElementById("course-details-modal")
+        .classList.add("show-modal");
+    }
+
+    function closeCourseDetails() {
+      document
+        .getElementById("course-details-modal")
+        .classList.remove("show-modal");
+      setTimeout(() => {
+        document.getElementById("course-details-modal").style.display = "none";
+      }, 300);
+    }
+    // Form submit event
+    document
+      .getElementById("registrationForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+        alert("Thank you for registering! We’ll contact you soon.");
+        closeRegistrationForm();
+        document.getElementById("registrationForm").reset();
+      });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const animatedCards = document.querySelectorAll(".animated-card");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          } else {
+            // Remove the class when the card is out of view to allow animation on re-entry
+            entry.target.classList.remove("visible");
+          }
+        });
+      });
+
+      animatedCards.forEach((card) => {
+        observer.observe(card);
+      });
+    });
+
+    function openRegistrationForm() {
+      document.getElementById("registrationModal").style.display = "block";
+    }
+
+    function closeRegistrationForm() {
+      document.getElementById("registrationModal").style.display = "none";
+    }
+    document
+      .getElementById("registrationModal")
+      .addEventListener("click", function (event) {
+        if (event.target === this) {
+          closeModal(); // Close modal if clicked outside modal-content
+        }
+      });
+  </script>
+</html>

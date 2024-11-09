@@ -1,0 +1,457 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body,
+h1,
+h2,
+p,
+button {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(120deg, #4caf50, #66bb6a);
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+  /* border-radius: 0 0 20px 20px; */
+}
+header h1 {
+  font-size: 2.8em;
+  margin-bottom: 20px;
+}
+
+header p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+header button {
+  background: linear-gradient(120deg, #66bb6a, #388e3c);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.3s ease;
+}
+
+header button:hover {
+  background: linear-gradient(120deg, #388e3c, #2e7d32);
+}
+
+/* Section headings with padding */
+h2 {
+  font-size: 2.4em;
+  margin-bottom: 25px;
+  color: #388e3c;
+}
+
+.container {
+  width: 85%;
+  margin: auto;
+  padding: 40px 0;
+}
+
+/* h1, h2 { */
+/* margin-bottom: 20px;
+} */
+
+.course-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.course-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  flex: 1;
+  /* min-width: 280px; */
+  width: 90%;
+  text-align: center;
+}
+
+.course-card h3 {
+  margin-bottom: 15px;
+}
+
+.course-card button {
+  margin-top: 15px;
+  background: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.course-card button:hover {
+  background: #45a049;
+  transform: scale(1.1);
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: absolute; /* Now absolute to position within the modal */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+label {
+  display: block;
+  margin: 15px 0 5px;
+  color: #2e7d32;
+  font-weight: 900;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0 15px;
+  border: 1px solid #2e7d326e;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .course-list {
+    flex-direction: column;
+  }
+}
+/* About Us Section */
+#about {
+  text-align: center;
+  padding: 50px 0;
+}
+
+#about p {
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Features Section */
+#features {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.feature-list {
+  display: flex;
+  flex-wrap: wrap; /* This allows the items to wrap into rows */
+  gap: 20px;
+  justify-content: center;
+}
+
+
+.feature-item {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* width: calc(33.33% - 20px); Each item will take up 1/3 of the width, with space for gaps */
+  width: 200px;
+  text-align: center;
+  box-sizing: border-box; /* Ensures padding is included in the width calculation */
+}
+
+.feature-item h3 {
+  margin-bottom: 15px;
+}
+
+/* @media (max-width: 768px) {
+  .feature-item {
+    width: calc(50% - 20px); /* On smaller screens, two items per row */
+  /* }
+} */ 
+
+/* Modal input focus effect */
+.modal input:focus, 
+.modal select:focus, 
+.modal textarea:focus {
+  outline: none; /* Removes default browser outline */
+  border: 2px solid #4caf50; /* Adds a custom green border on focus */
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5); /* Adds a shadow to make the input pop */
+  transition: border 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for focus effect */
+}
+
+@media (max-width: 480px) {
+  .feature-item {
+    width: 100%; /* On very small screens, one item per row */
+  }
+}
+
+/* Testimonials Section */
+#testimonials {
+  background: #f4f4f4;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.testimonial-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.testimonial-item {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 300px;
+}
+
+/* Contact Section */
+#contact {
+  text-align: center;
+  padding: 50px 0;
+}
+
+#contact p {
+  line-height: 1.6;
+}
+
+#contact a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* Scroll Animation */
+.animated-card {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animated-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.course-card,
+.feature-item {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  flex: 1;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover,
+.feature-item:hover {
+  transform: translateY(-10px) scale(1.05); /* Slight lift and scale */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Add more shadow for depth */
+}
+
+
+
+
+
+
+
+
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+.course-details-content h3 {
+  margin-bottom: 20px;
+}
+
+.course-details-content p { 
+  margin-bottom: 20px;
+}
+.course-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.course-card {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.course-card:hover {
+  transform: scale(1.05);
+}
+
+/* Modal styling */
+.course-details-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.course-details-modal.show-modal {
+  opacity: 1;
+}
+
+.course-details-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 600px;
+  text-align: left;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  animation: slide-in 0.3s ease-out;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #e74c3c;
+}
+
+.course-outline {
+  margin-top: 20px;
+}
+
+.outline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #f3f4f6;
+  border-radius: 10px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.outline-item:hover {
+  background-color: #e8eaf6;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.outline-item i {
+  font-size: 22px;
+  margin-right: 15px;
+  color: #3498db;
+}
+
+.outline-text h5 {
+  font-size: 18px;
+  margin: 0;
+  color: #2c3e50;
+}
+
+.outline-text p {
+  margin: 5px 0 0;
+  color: #555;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #3498db;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Modal open animation */
+@keyframes slide-in {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
