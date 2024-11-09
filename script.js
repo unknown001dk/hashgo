@@ -39,3 +39,19 @@ document.getElementById('registrationModal').addEventListener('click', function(
     closeModal(); // Close modal if clicked outside modal-content
   }
 });
+
+function openCourseDetails() {
+  document.getElementById("course-details-modal").style.display = "flex";
+  document
+    .getElementById("course-details-modal")
+    .classList.add("show-modal");
+}
+
+function closeCourseDetails() {
+  document
+    .getElementById("course-details-modal")
+    .classList.remove("show-modal");
+  setTimeout(() => {
+    document.getElementById("course-details-modal").style.display = "none";
+  }, 300);
+}

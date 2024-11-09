@@ -14,10 +14,19 @@ button {
   padding: 0;
   font-family: Arial, sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
 
 body {
   background-color: #f4f6f8;
   color: #333;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 header {
@@ -263,6 +272,10 @@ button[type="submit"]:hover {
   gap: 20px;
   justify-content: center;
 }
+.testimonial-item p {
+  margin-bottom: 20px;
+}
+
 
 .testimonial-item {
   background: #fff;
@@ -319,14 +332,6 @@ button[type="submit"]:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Add more shadow for depth */
 }
 
-
-
-
-
-
-
-
-
 .container {
   max-width: 1200px;
   margin: auto;
@@ -335,6 +340,14 @@ button[type="submit"]:hover {
 }
 .course-details-content h3 {
   margin-bottom: 20px;
+}
+
+.course-details-content::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .course-details-content p { 

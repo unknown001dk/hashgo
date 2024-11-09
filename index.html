@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Course Registration</title>
+    <title>Hash GO</title>
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
@@ -14,7 +14,7 @@
     <!-- Header Section -->
     <header>
       <div class="container">
-        <h1>Welcome to #start Academy</h1>
+        <h1>Welcome to #GO Academy</h1>
         <p>Your journey to becoming a MERN Stack Developer starts here!</p>
         <button onclick="openRegistrationForm()">Register Now</button>
       </div>
@@ -24,7 +24,7 @@
     <section id="about" class="container animated-card">
       <h2>About Us</h2>
       <p>
-        #start Academy is dedicated to helping aspiring developers learn MERN
+        #GO Academy is dedicated to helping aspiring developers learn MERN
         Stack through hands-on projects. With expert guidance, supportive
         resources, and practical coding exercises, we ensure that our students
         are job-ready by the end of the course.
@@ -83,14 +83,14 @@
             "I learned so much in just 15 days! The projects were engaging, and
             I felt supported every step of the way."
           </p>
-          <p><strong>- Alex, Student</strong></p>
+          <p><strong>- sankar, Student</strong></p>
         </div>
         <div class="testimonial-item animated-card">
           <p>
             "The hands-on projects were exactly what I needed to build my
             skills. I now feel confident applying for jobs!"
           </p>
-          <p><strong>- Jamie, Junior Developer</strong></p>
+          <p><strong>- dk, Junior Developer</strong></p>
         </div>
       </div>
     </section>
@@ -100,7 +100,7 @@
       <h2>Contact Us</h2>
       <p>
         If you have any questions, feel free to reach out at
-        <a href="mailto:info@startacademy.com">info@startacademy.com</a>.
+        <a href="#">hashgotech</a>.
       </p>
     </section>
 
@@ -251,64 +251,4 @@
 
     <script src="script.js"></script>
   </body>
-  <script>
-    function openCourseDetails() {
-      document.getElementById("course-details-modal").style.display = "flex";
-      document
-        .getElementById("course-details-modal")
-        .classList.add("show-modal");
-    }
-
-    function closeCourseDetails() {
-      document
-        .getElementById("course-details-modal")
-        .classList.remove("show-modal");
-      setTimeout(() => {
-        document.getElementById("course-details-modal").style.display = "none";
-      }, 300);
-    }
-    // Form submit event
-    document
-      .getElementById("registrationForm")
-      .addEventListener("submit", function (event) {
-        event.preventDefault();
-        alert("Thank you for registering! We’ll contact you soon.");
-        closeRegistrationForm();
-        document.getElementById("registrationForm").reset();
-      });
-
-    document.addEventListener("DOMContentLoaded", function () {
-      const animatedCards = document.querySelectorAll(".animated-card");
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          } else {
-            // Remove the class when the card is out of view to allow animation on re-entry
-            entry.target.classList.remove("visible");
-          }
-        });
-      });
-
-      animatedCards.forEach((card) => {
-        observer.observe(card);
-      });
-    });
-
-    function openRegistrationForm() {
-      document.getElementById("registrationModal").style.display = "block";
-    }
-
-    function closeRegistrationForm() {
-      document.getElementById("registrationModal").style.display = "none";
-    }
-    document
-      .getElementById("registrationModal")
-      .addEventListener("click", function (event) {
-        if (event.target === this) {
-          closeModal(); // Close modal if clicked outside modal-content
-        }
-      });
-  </script>
 </html>
