@@ -10,10 +10,8 @@ document
     const phoneNumber = document.getElementById("phonenumber").value;
     const course = document.getElementById("course").value;
 
-    // Show success toast message
-
     // Add the user to the database or API here
-    const apiUrl = "https://hashgo-api.vercel.app/api/v1/users"; // Corrected URL format
+    const apiUrl = "http://localhost:8081/api/v1/users"; // Corrected URL format
 
     fetch(
       apiUrl,
@@ -37,18 +35,12 @@ document
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         showToast("success", "Registered successfully!!");
-
-        // Optional: Show success message from response
       })
       .catch((error) => {
         console.error("Error:", error);
         showToast("error", "Registration failed. Please try again.");
       });
-
-    // Log form values to console
-    console.log(name, email, phoneNumber, course);
 
     // Close the form and reset it
     closeRegistrationForm();
