@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hash GO</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      /* Styles for modals, buttons, and timer */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 600px;
+        border-radius: 10px;
+      }
+
+      .close-button,
+      .close-btn {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .close-button:hover,
+      .close-btn:hover {
+        color: #000;
+      }
+
+      /* Countdown Timer Clock */
+      .clock {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .circle {
+        width: 150px;
+        height: 150px;
+        border: 10px solid #333;
+        border-radius: 50%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        color: #333;
+        font-weight: bold;
+      }
+
+      .circle span {
+        position: absolute;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      .label {
+        font-size: 0.9rem;
+        color: #555;
+        margin-top: 10px;
+      }
+
+      .time-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .time-box {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="container">
+        <h1>Welcome to #GO Academy</h1>
+        <p>Your journey to becoming a MERN Stack Developer starts here!</p>
+        <button onclick="openRegistrationForm()">Register Now</button>
+        <!-- Countdown Clock -->
+        <div class="time-container">
+          <div class="time-box">
+            <div class="circle"><span id="days"></span></div>
+            <div class="label">Days</div>
+          </div>
+          <div class="time-box">
+            <div class="circle"><span id="hours"></span></div>
+            <div class="label">Hours</div>
+          </div>
+          <div class="time-box">
+            <div class="circle"><span id="minutes"></span></div>
+            <div class="label">Minutes</div>
+          </div>
+          <div class="time-box">
+            <div class="circle"><span id="seconds"></span></div>
+            <div class="label">Seconds</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- About Us Section -->
+    <section id="about" class="container animated-card">
+      <h2>About Us</h2>
+      <p>
+        #GO Academy is dedicated to helping aspiring developers learn MERN Stack
+        through hands-on projects. With expert guidance, supportive resources,
+        and practical coding exercises, we ensure that our students are
+        job-ready by the end of the course.
+      </p>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="container">
+      <h2>Why Choose Us?</h2>
+      <div class="feature-list">
+        <div class="feature-item animated-card">
+          <h3>Hands-On Projects</h3>
+          <p>
+            Each day, tackle a real-world project that enhances your skills and
+            builds your portfolio.
+          </p>
+        </div>
+        <div class="feature-item animated-card">
+          <h3>Expert Guidance</h3>
+          <p>
+            Learn from experienced developers who will guide you through the
+            learning process step-by-step.
+          </p>
+        </div>
+        <div class="feature-item animated-card">
+          <h3>Community Support</h3>
+          <p>
+            Join a community of like-minded learners and receive feedback,
+            support, and encouragement.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="container">
+      <h2>Available Courses</h2>
+      <div class="course-list">
+        <div class="course-card animated-card">
+          <h3>10 Projects in 15 Days</h3>
+          <p>Learn the MERN Stack by building 10 hands-on projects!</p>
+          <button onclick="openRegistrationForm()">Register</button>
+          <button onclick="openCourseDetails()">Learn More</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal for Course Details -->
+    <div id="course-details-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeCourseDetails()">&times;</span>
+        <h3>Course Overview</h3>
+        <p>
+          In this course, you will build 10 projects in just 15 days. Learn key
+          web development concepts by hands-on coding experience!
+        </p>
+        <h4>Course Outline</h4>
+        <!-- Course outline here -->
+      </div>
+    </div>
+
+    <!-- Registration Form Modal -->
+    <div id="registrationModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="closeRegistrationForm()"
+          >&times;</span
+        >
+        <h2>Register for Course</h2>
+        <form id="registrationForm">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="Phonenumber">Phonenumber</label>
+          <input type="tel" id="Phonenumber" name="Phonenumber" required />
+
+          <label for="course">Select Course:</label>
+          <select id="course" name="course">
+            <option value="" disabled selected hidden>Select Course</option>
+            <option value="10 Projects in 15 Days">
+              10 Projects in 15 Days
+            </option>
+          </select>
+
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Countdown Timer Script for Clock UI
+      function calculateTimeRemaining(endDate) {
+        const now = new Date().getTime();
+        const distance = endDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        return { days, hours, minutes, seconds, distance };
+      }
+
+      function startCountdown(targetDate) {
+        const countdown = setInterval(() => {
+          const { days, hours, minutes, seconds, distance } =
+            calculateTimeRemaining(targetDate);
+
+          document.getElementById("days").textContent = days;
+          document.getElementById("hours").textContent = hours;
+          document.getElementById("minutes").textContent = minutes;
+          document.getElementById("seconds").textContent = seconds;
+
+          if (distance < 0) {
+            clearInterval(countdown);
+            document.getElementById("days").textContent = "0";
+            document.getElementById("hours").textContent = "0";
+            document.getElementById("minutes").textContent = "0";
+            document.getElementById("seconds").textContent = "0";
+          }
+        }, 1000);
+      }
+
+      function getNextMonday() {
+        const now = new Date();
+        const nextMonday = new Date(now);
+        nextMonday.setDate(now.getDate() + (8 - now.getDay()));
+        nextMonday.setHours(0, 0, 0, 0);
+
+        return nextMonday;
+      }
+
+      // Start countdown
+      const nextMonday = getNextMonday();
+      startCountdown(nextMonday);
+
+      // Modal Functions
+      function openRegistrationForm() {
+        document.getElementById("registrationModal").style.display = "block";
+      }
+
+      function closeRegistrationForm() {
+        document.getElementById("registrationModal").style.display = "none";
+      }
+
+      function openCourseDetails() {
+        document.getElementById("course-details-modal").style.display = "block";
+      }
+
+      function closeCourseDetails() {
+        document.getElementById("course-details-modal").style.display = "none";
+      }
+
+      // Close the modal when clicking outside of it
+      window.onclick = function (event) {
+        const registrationModal = document.getElementById("registrationModal");
+        const courseDetailsModal = document.getElementById(
+          "course-details-modal"
+        );
+        if (event.target == registrationModal) {
+          registrationModal.style.display = "none";
+        }
+        if (event.target == courseDetailsModal) {
+          courseDetailsModal.style.display = "none";
+        }
+      };
+    </script>
+  </body>
+</html>

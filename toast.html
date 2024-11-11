@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toast Notifications</title>
+  <style>
+    /* Basic Toast Styles */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      min-width: 200px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: black;
+      font-size: 16px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Success Toast Styles */
+    .success-toast {
+      background-color: #fff;
+      border-bottom: 3px solid green;
+    }
+
+    /* Error Toast Styles */
+    .error-toast {
+      background-color: #fff;
+      border-bottom: 3px solid red;
+    }
+
+    /* Show Toast */
+    .show {
+      opacity: 1;
+    }
+
+    /* Close Button */
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #888;
+    }
+
+    .close-btn:hover {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Success Toast -->
+  <div id="success-toast" class="toast success-toast">
+    <span id="success-message">Operation was successful!</span>
+    <button class="close-btn" onclick="closeToast('success-toast')">&times;</button>
+  </div>
+
+  <!-- Error Toast -->
+  <div id="error-toast" class="toast error-toast">
+    <span id="error-message">Something went wrong!</span>
+    <button class="close-btn" onclick="closeToast('error-toast')">&times;</button>
+  </div>
+
+  <button onclick="showToast('success', 'lost')">Show Success</button>
+  <button onclick="showToast('error', 'Custom Error Message!')">Show Error</button>
+
+  <script>
+    // Function to show toast with dynamic content
+    function showToast(type, message) {
+      let toast, messageElement;
+      if (type === 'success') {
+        toast = document.getElementById('success-toast');
+        messageElement = document.getElementById('success-message');
+        toast.classList.add('show');
+      } else if (type === 'error') {
+        toast = document.getElementById('error-toast');
+        messageElement = document.getElementById('error-message');
+        toast.classList.add('show');
+      }
+
+      // Set the message dynamically
+      messageElement.textContent = message;
+      
+      // Hide the toast after 3 seconds
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    // Function to close a specific toast
+    function closeToast(toastId) {
+      const toast = document.getElementById(toastId);
+      toast.classList.remove('show');
+    }
+  </script>
+
+</body>
+</html>

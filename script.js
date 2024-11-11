@@ -11,7 +11,7 @@ document
     const course = document.getElementById("course").value;
 
     // Add the user to the database or API here
-    const apiUrl = "https://hashgo-api.vercel.app//api/v1/users"; // Corrected URL format
+    const apiUrl = "https://hashgo-api.vercel.app/api/v1/users"; // Corrected URL format
 
     fetch(
       apiUrl,
